@@ -68,11 +68,30 @@ verificarBtn.addEventListener( 'click', () => {
     if ( resultado.erro ) {
         resultadosDiv.innerHTML = `<p class="erro">Erro: ${ resultado.erro }</p>`
     } else if ( resultado.lista && resultado.lista.length > 0 ) {
-        resultado.lista.forEach( item => {
-            const p = document.createElement( 'p' )
-            p.className = 'resultado-item'
-            p.textContent = item
-            resultadosDiv.appendChild( p )
+        resultado.lista.forEach( itemTexto => {
+            // Separa o nome do animal e o destino
+            const [ nomeAnimal, destino ] = itemTexto.split( ' - ' )
+
+            // Pega o objeto completo do animal para acessar a imagem
+            const animalInfo = abrigo.animaisDB[ nomeAnimal ]
+
+            // Cria o card do resultado
+            const resultadoCard = document.createElement( 'div' )
+            resultadoCard.className = 'resultado-card'
+
+            // Cria a imagem
+            const imgAnimal = document.createElement( 'img' )
+            imgAnimal.src = animalInfo.imagem
+            imgAnimal.alt = `Foto do(a) ${ nomeAnimal }`
+            resultadoCard.appendChild( imgAnimal )
+
+            // Cria o parágrafo com o texto
+            const pInfo = document.createElement( 'p' )
+            pInfo.textContent = itemTexto
+            resultadoCard.appendChild( pInfo )
+
+            // Adiciona o card completo na div de resultados
+            resultadosDiv.appendChild( resultadoCard )
         } )
     } else {
         resultadosDiv.innerHTML = '<p>Nenhuma combinação válida encontrada ou nenhum animal selecionado.</p>'
