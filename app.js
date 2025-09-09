@@ -1,4 +1,4 @@
-import { AbrigoAnimais } from './abrigo-animais.js'
+import { AbrigoAnimais } from './src/abrigo-animais.js'
 
 // Instancia a classe principal do desafio
 const abrigo = new AbrigoAnimais()
