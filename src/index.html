@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Abrigo Interativo</title>
+        <link rel="stylesheet" href="/src/style/style.css">
+    </head>
+
+    <body>
+        <main>
+            <h1>🐾 Abrigo Interativo</h1>
+            <p>Selecione os brinquedos de cada pessoa e os animais para adoção, depois clique no botão para ver o
+                resultado!</p>
+
+            <div class="controles">
+                <fieldset>
+                    <legend>Pessoa 1</legend>
+                    <div id="brinquedos-p1" class="checkbox-container">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pessoa 2</legend>
+                    <div id="brinquedos-p2" class="checkbox-container">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Animais para Adoção</legend>
+                    <div id="animais-disponiveis" class="checkbox-container">
+                    </div>
+                </fieldset>
+            </div>
+
+            <button type="button" id="verificar-btn">Verificar Adoções</button>
+
+            <div class="resultados-container">
+                <h2>Resultados</h2>
+                <div id="resultados">
+                </div>
+            </div>
+        </main>
+
+        <script type="module" src="app.js"></script>
+    </body>
+
+</html>
